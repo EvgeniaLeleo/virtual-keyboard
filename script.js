@@ -144,13 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
           'ArrowRight',
         ],
       ];
-      // this.line0 = [192, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 189, 187, 8];
-      // this.line1 = [
-      //   9, 81, 87, 69, 82, 84, 89, 85, 73, 79, 80, 219, 221, 220, 46,
-      // ];
-      // this.line2 = [20, 65, 83, 68, 70, 71, 72, 74, 75, 76, 186, 222, 13];
-      // this.line3 = [16, 90, 88, 67, 86, 66, 78, 77, 188, 190, 191, 38, 16];
-      // this.line4 = [17, 91, 18, 32, 18, 17, 37, 40, 39];
     }
 
     generateKeyboard() {
@@ -235,6 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const btnArrUp = keyboard.querySelectorAll('.keyboard__button')[53];
       btnArrUp.classList.add('btn__arr-up');
+      btnArrUp.innerHTML =
+        '<svg class="arrow-up"><path d="M6.660,8.922 L6.660,8.922 L2.350,13.408 L0.503,11.486 L4.813,7.000 L0.503,2.515 L2.350,0.592 L8.507,7.000 L6.660,8.922 Z" /></svg>';
 
       const btnShiftR = keyboard.querySelectorAll('.keyboard__button')[54];
       btnShiftR.classList.add('btn__shift-r', 'btn__shift');
@@ -259,12 +254,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const btnArrLeft = keyboard.querySelectorAll('.keyboard__button')[61];
       btnArrLeft.classList.add('btn__arr-left', 'btn__arr');
+      btnArrLeft.innerHTML =
+        '<svg class="arrow-left"><path d="M6.660,8.922 L6.660,8.922 L2.350,13.408 L0.503,11.486 L4.813,7.000 L0.503,2.515 L2.350,0.592 L8.507,7.000 L6.660,8.922 Z" /></svg>';
 
       const btnArrDown = keyboard.querySelectorAll('.keyboard__button')[62];
       btnArrDown.classList.add('btn__arr-down', 'btn__arr');
+      btnArrDown.innerHTML =
+        '<svg class="arrow-down"><path d="M6.660,8.922 L6.660,8.922 L2.350,13.408 L0.503,11.486 L4.813,7.000 L0.503,2.515 L2.350,0.592 L8.507,7.000 L6.660,8.922 Z" /></svg>';
 
       const btnArrRight = keyboard.querySelectorAll('.keyboard__button')[63];
       btnArrRight.classList.add('btn__arr-right', 'btn__arr');
+      btnArrRight.innerHTML =
+        '<svg class="arrow-right"><path d="M6.660,8.922 L6.660,8.922 L2.350,13.408 L0.503,11.486 L4.813,7.000 L0.503,2.515 L2.350,0.592 L8.507,7.000 L6.660,8.922 Z" /></svg>';
     }
 
     pressAnimation() {
@@ -298,15 +299,26 @@ document.addEventListener('DOMContentLoaded', () => {
               buttonsLine[i].style.background = 'rgb(125, 176, 208)';
               buttonsLine[i].style.boxShadow =
                 '0 0 10px rgba(125, 176, 208, 0.3)';
+              buttonsLine[i].style.transform = 'translateY(2px)';
 
               function btnTransit() {
                 buttonsLine[i].style.background = '#708090';
                 buttonsLine[i].style.boxShadow =
                   '1px 1px 5px rgba(0, 0, 0, 0.5)';
+                buttonsLine[i].style.transform = 'translateY(0px)';
               }
 
               setTimeout(btnTransit, 100);
             }
+
+            // сохранение hover эффекта
+            buttonsLine[i].addEventListener('mouseover', () => {
+              buttonsLine[i].classList.add('hover');
+            });
+
+            buttonsLine[i].addEventListener('mouseleave', () => {
+              buttonsLine[i].classList.remove('hover');
+            });
           }
         }
       });
@@ -320,36 +332,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.textarea').focus();
   keyBrd.pressAnimation();
   keyBrd.buttonsHighlight();
-
-  // const arr =
-  //   '`1234567890-=btqwertyuiop[]\\dcasdfghjkl;kesszxcvbnm,./uscwasacaaa.'.split(
-  //     ''
-  //   );
-
-  // console.log(arr);
-
-  // массив кодов кнопок клавиатуры
-  // let arr = [];
-  // function keyPress(e) {
-  //   let keyNum;
-  //   if (window.event) {
-  //     keyNum = window.event.keyCode;
-  //   } else if (e) {
-  //     keyNum = e.which;
-  //   }
-  //   arr.push(keyNum);
-  //   console.log(arr);
-  // }
-  // document.onkeydown = keyPress;
-
-  // function pressAnimationRealKeyboard() {
-  //   const buttons = document.querySelectorAll('.keyboard__button');
-
-  // }
-
-  // let arr = [];
-  // document.addEventListener('keydown', function (event) {
-  //   arr.push(event.code);
-  //   console.log(arr);
-  // });
 });
+
+// const arr =
+//   '`1234567890-=btqwertyuiop[]\\dcasdfghjkl;kesszxcvbnm,./uscwasacaaa.'.split(
+//     ''
+//   );
+
+// let arr = [];
+// document.addEventListener('keydown', function (event) {
+//   arr.push(event.code);
+//   console.log(arr);
+// });
