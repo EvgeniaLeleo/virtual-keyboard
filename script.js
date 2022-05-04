@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
       '"',
       'Enter',
     ],
-    ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'u', 'Shift'],
-    ['Ctrl', 'Win', 'Alt', '', 'Alt', 'Ctrl', '<', 'v', '>'],
+    ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '', 'Shift'],
+    ['Ctrl', 'Win', 'Alt', '', 'Alt', 'Ctrl', '', '', ''],
   ];
 
   for (let line = 0; line < 5; line++) {
@@ -157,11 +157,24 @@ document.addEventListener('DOMContentLoaded', () => {
   btnCtrlR.classList.add('btn__ctrl-r', 'btn__ctrl');
 
   const btnArrLeft = keyboard.querySelectorAll('.keyboard__button')[61];
-  btnArrLeft.classList.add('btn__arr-left');
+  btnArrLeft.classList.add('btn__arr-left', 'btn__arr');
 
   const btnArrDown = keyboard.querySelectorAll('.keyboard__button')[62];
-  btnArrDown.classList.add('btn__arr-down');
+  btnArrDown.classList.add('btn__arr-down', 'btn__arr');
 
   const btnArrRight = keyboard.querySelectorAll('.keyboard__button')[63];
-  btnArrRight.classList.add('btn__arr-right');
+  btnArrRight.classList.add('btn__arr-right', 'btn__arr');
+
+  const btns = keyboard.querySelectorAll('.keyboard__button');
+  btns.forEach((btn) =>
+    btn.addEventListener('click', () => {
+      btn.style.transform = 'translateY(1.5px)';
+
+      function btnTransit() {
+        btn.style.transform = 'translateY(0px)';
+      }
+
+      setTimeout(btnTransit, 50);
+    })
+  );
 });

@@ -21,6 +21,7 @@ body {
           align-items: center;
   color: #545454;
   background-color: azure;
+  font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
 }
 
@@ -48,8 +49,11 @@ body {
           align-items: center;
   gap: 10px;
   color: whitesmoke;
-  background-color: whitesmoke;
-  border: 2px solid #545454;
+  background-color: #535c67;
+  border-top: 5px solid #b4c7df;
+  border-left: 5px solid #8897a9;
+  border-right: 5px solid #454d56;
+  border-bottom: 7px solid #212529;
   border-radius: 10px;
   padding: 20px;
 }
@@ -61,7 +65,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 570px;
+  width: 650px;
 }
 
 .keyboard__button {
@@ -78,11 +82,22 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid black;
-  background-color: slategrey;
-  width: 30px;
-  height: 30px;
+  border-top: 2px solid #9fb4cb;
+  border-left: 2px solid #96abbf;
+  border-right: 2px solid #55616d;
+  border-bottom: 2px solid #2f363d;
+  background-color: #708090;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  width: 35px;
+  height: 35px;
   cursor: pointer;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.keyboard__button:hover {
+  background-color: cadetblue;
 }
 
 .btn__backspace {
@@ -90,15 +105,15 @@ body {
 }
 
 .btn__caps {
-  width: 80px;
-}
-
-.btn__shift {
   width: 90px;
 }
 
+.btn__shift-l {
+  width: 110px;
+}
+
 .btn__shift-r {
-  width: 80px;
+  width: 40px;
 }
 
 .btn__tab {
@@ -118,10 +133,46 @@ body {
 }
 
 .btn__win, .btn__alt {
-  width: 45px;
+  width: 40px;
 }
 
 .btn__space {
-  width: 210px;
+  width: 245px;
+}
+
+.btn__arr-up {
+  width: 40px;
+}
+
+.btn__arr {
+  width: 40px;
+}
+
+.btn__arr-up {
+  background-image: url("img/arr-up.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.btn__arr-left {
+  background-image: url("img/arr-left.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.btn__arr-down {
+  background-image: url("img/arr-down.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.btn__arr-right {
+  background-image: url("img/arr-right.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 /*# sourceMappingURL=style.css.map */
