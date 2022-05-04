@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const textarea = document.createElement('textarea');
-  textarea.rows = '10';
+  textarea.rows = '7';
   textarea.classList.add('textarea');
 
   const keyboard = document.createElement('div');
@@ -168,10 +168,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const btns = keyboard.querySelectorAll('.keyboard__button');
   btns.forEach((btn) =>
     btn.addEventListener('click', () => {
-      btn.style.transform = 'translateY(1.5px)';
+      btn.style.transform = 'translateY(2px)';
+      btn.style.boxShadow = '-1px -1px 3px rgba(0, 0, 0, 0.6)';
 
       function btnTransit() {
         btn.style.transform = 'translateY(0px)';
+        btn.style.boxShadow = '1px 1px 5px rgba(0, 0, 0, 0.5)';
       }
 
       setTimeout(btnTransit, 50);
