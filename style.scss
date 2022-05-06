@@ -19,6 +19,13 @@ body {
   height: 100vh;
 }
 
+.title {
+  font-size: 24px;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .textarea {
   width: 700px;
   resize: none;
@@ -27,9 +34,9 @@ body {
   font-size: 18px;
 
   border-bottom: 5px solid #b4c7df;
-  border-right: 5px solid #9aaabe;
+  border-right: 5px solid #aabbd0;
   border-left: 5px solid #8896a7;
-  border-top: 5px solid #535d67;
+  border-top: 5px solid #64707c;
   border-radius: 10px;
 
   padding: 20px;
@@ -54,8 +61,8 @@ body {
   border-bottom: 7px solid #212529;
   border-radius: 10px;
 
-  // min-width: 700px;
   padding: 20px;
+  margin-bottom: 20px;
 
   &__line {
     display: flex;
@@ -134,4 +141,10 @@ body {
   &__space {
     width: 232px;
   }
+}
+
+.note {
+  color: #67727e;
+  margin-bottom: 7px;
+  margin-left: 30px;
 }

@@ -188,6 +188,140 @@ document.addEventListener('DOMContentLoaded', () => {
         ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', ''],
       ];
 
+      this.keySymbolsRu = [
+        [
+          'ё',
+          '1',
+          '2',
+          '3',
+          '4',
+          '5',
+          '6',
+          '7',
+          '8',
+          '9',
+          '0',
+          '-',
+          '=',
+          'Backspace',
+        ],
+        [
+          'Tab',
+          'й',
+          'ц',
+          'у',
+          'к',
+          'е',
+          'н',
+          'г',
+          'ш',
+          'щ',
+          'з',
+          'х',
+          'ъ',
+          '\\',
+          'Del',
+        ],
+        [
+          'Caps Lock',
+          'ф',
+          'ы',
+          'в',
+          'а',
+          'п',
+          'р',
+          'о',
+          'л',
+          'д',
+          'ж',
+          'э',
+          'Enter',
+        ],
+        [
+          'Shift',
+          'я',
+          'ч',
+          'с',
+          'м',
+          'и',
+          'т',
+          'ь',
+          'б',
+          'ю',
+          '.',
+          '',
+          'Shift',
+        ],
+        ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', ''],
+      ];
+
+      this.keySymbolsRuCaps = [
+        [
+          'Ё',
+          '1',
+          '2',
+          '3',
+          '4',
+          '5',
+          '6',
+          '7',
+          '8',
+          '9',
+          '0',
+          '-',
+          '=',
+          'Backspace',
+        ],
+        [
+          'Tab',
+          'Й',
+          'Ц',
+          'У',
+          'К',
+          'Е',
+          'Н',
+          'Г',
+          'Ш',
+          'Щ',
+          'З',
+          'Х',
+          'Ъ',
+          '\\',
+          'Del',
+        ],
+        [
+          'Caps Lock',
+          'Ф',
+          'Ы',
+          'В',
+          'А',
+          'П',
+          'Р',
+          'О',
+          'Л',
+          'Д',
+          'Ж',
+          'З',
+          'Enter',
+        ],
+        [
+          'Shift',
+          'Я',
+          'Ч',
+          'С',
+          'М',
+          'И',
+          'Т',
+          'Ь',
+          'Б',
+          'Ю',
+          '.',
+          '',
+          'Shift',
+        ],
+        ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', ''],
+      ];
+
       this.lineCodesEn = [
         [
           'Backquote',
@@ -266,18 +400,24 @@ document.addEventListener('DOMContentLoaded', () => {
       ];
 
       this.caps = false;
-      this.language = localStorage.getItem('language') === 'ru' ? 'ru' : 'en';
+      this.language = 'ru';
+      // this.language = localStorage.getItem('language') === 'ru' ? 'ru' : 'en';
     }
 
     generateKeyboard() {
+      const title = document.createElement('h1');
+      title.classList.add('title');
+      title.textContent = 'Virtual Keyboard';
+
       const textarea = document.createElement('textarea');
-      textarea.rows = '7';
+      textarea.rows = '3';
       textarea.classList.add('textarea');
       textarea.focus();
 
       const keyboard = document.createElement('div');
       keyboard.classList.add('keyboard');
 
+      document.body.appendChild(title);
       document.body.appendChild(textarea);
       document.body.appendChild(keyboard);
 
@@ -296,6 +436,18 @@ document.addEventListener('DOMContentLoaded', () => {
           keyboardLines[k].appendChild(button);
         }
       }
+
+      const note1 = document.createElement('p');
+      note1.classList.add('note');
+      note1.textContent = 'Клавиатура создана в операционной системе Windows';
+      const note2 = document.createElement('p');
+
+      note2.classList.add('note');
+      note2.textContent =
+        'Для переключения языка - комбинация: левыe Alt + Shift';
+
+      document.body.appendChild(note1);
+      document.body.appendChild(note2);
     }
 
     // заполнение клавиш
@@ -305,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const button = keyboard.querySelectorAll('.keyboard__button');
       let number = 0;
 
-      if (!this.caps) {
+      if (!this.caps && this.language === 'en') {
         for (let k = 0; k < keyboardLines.length; k++) {
           for (let i = 0; i < this.keySymbolsEn[k].length; i++) {
             button[number].textContent = this.keySymbolsEn[k][i];
@@ -314,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      if (this.caps) {
+      if (this.caps && this.language === 'en') {
         for (let k = 0; k < keyboardLines.length; k++) {
           for (let i = 0; i < this.keySymbolsEn[k].length; i++) {
             button[number].textContent = this.keySymbolsEnCaps[k][i];
@@ -323,18 +475,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
+      if (!this.caps && this.language === 'ru') {
+        for (let k = 0; k < keyboardLines.length; k++) {
+          for (let i = 0; i < this.keySymbolsRu[k].length; i++) {
+            button[number].textContent = this.keySymbolsRu[k][i];
+            number++;
+          }
+        }
+      }
+
+      if (this.caps && this.language === 'ru') {
+        for (let k = 0; k < keyboardLines.length; k++) {
+          for (let i = 0; i < this.keySymbolsRuCaps[k].length; i++) {
+            button[number].textContent = this.keySymbolsRuCaps[k][i];
+            number++;
+          }
+        }
+      }
+
       if (keyboard.querySelector('.btn__arr')) {
         const btnArrUp = keyboard.querySelector('.btn__arr-up');
-        btnArrUp.innerHTML = '&#129049;';
+        btnArrUp.innerHTML = '▲';
 
         const btnArrLeft = keyboard.querySelector('.btn__arr-left');
-        btnArrLeft.innerHTML = '&#129064;';
+        btnArrLeft.innerHTML = '◄';
 
         const btnArrDown = keyboard.querySelector('.btn__arr-down');
-        btnArrDown.innerHTML = '&#129067;';
+        btnArrDown.innerHTML = '▼';
 
         const btnArrRight = keyboard.querySelector('.btn__arr-right');
-        btnArrRight.innerHTML = '&#10142;';
+        btnArrRight.innerHTML = '►';
       }
     }
 
@@ -401,19 +571,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const btnArrUp = keyboard.querySelectorAll('.keyboard__button')[53];
       btnArrUp.classList.add('btn__arr-up', 'btn__arr');
-      btnArrUp.innerHTML = '&#129049;';
+      btnArrUp.innerHTML = '▲';
 
       const btnArrLeft = keyboard.querySelectorAll('.keyboard__button')[61];
       btnArrLeft.classList.add('btn__arr-left', 'btn__arr');
-      btnArrLeft.innerHTML = '&#129064;';
+      btnArrLeft.innerHTML = '◄';
 
       const btnArrDown = keyboard.querySelectorAll('.keyboard__button')[62];
       btnArrDown.classList.add('btn__arr-down', 'btn__arr');
-      btnArrDown.innerHTML = '&#129067;';
+      btnArrDown.innerHTML = '▼';
 
       const btnArrRight = keyboard.querySelectorAll('.keyboard__button')[63];
       btnArrRight.classList.add('btn__arr-right', 'btn__arr');
-      btnArrRight.innerHTML = '&#10142;';
+      btnArrRight.innerHTML = '►';
     }
 
     pressAnimation() {
@@ -474,13 +644,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // сохранение hover эффекта после перезаписи стилей выше
             buttonsLine[i].addEventListener('mouseover', () => {
-              buttonsLine[i].classList.add('hover');
+              if (line !== 2 || i !== 0) {
+                buttonsLine[i].classList.add('hover');
+              }
             });
 
             buttonsLine[i].addEventListener('mouseleave', () => {
-              buttonsLine[i].classList.remove('hover');
+              if (line !== 2 || i !== 0) {
+                buttonsLine[i].classList.remove('hover');
+              }
             });
           }
+        }
+      });
+    }
+
+    // набор текста с реальной клавиатуры
+    keydownAddText() {
+      document.addEventListener('keydown', (event) => {
+        const textarea = document.querySelector('.textarea');
+        const keyboardLine = document.querySelectorAll('.keyboard__line');
+        console.log(event.code);
+
+        if (
+          ![
+            'Backspace',
+            'Tab',
+            'Delete',
+            'CapsLock',
+            'Enter',
+            'MetaLeft',
+            'ShiftLeft',
+            'ShiftRight',
+            'ControlLeft',
+            'ControlRight',
+            'AltLeft',
+            'AltRight',
+          ].includes(event.code)
+        ) {
+          event.preventDefault();
+
+          for (let line = 0; line < 5; line++) {
+            const buttonsLine =
+              keyboardLine[line].querySelectorAll('.keyboard__button');
+
+            for (let i = 0; i < buttonsLine.length; i++) {
+              if (event.code === this.lineCodesEn[line][i]) {
+                textarea.value += buttonsLine[i].textContent;
+              }
+            }
+          }
+        }
+
+        if (event.code === 'Tab') {
+          event.preventDefault();
+          textarea.value += '    ';
         }
       });
     }
@@ -491,13 +709,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const buttonsChar = document.querySelectorAll('.btn__char');
 
       buttonsChar.forEach((btn) => {
-        btn.addEventListener('click', (event) => {
+        btn.addEventListener('click', () => {
           textarea.focus();
           textarea.value += btn.textContent;
         });
       });
 
       const buttons = document.querySelectorAll('.keyboard__button');
+
       buttons.forEach((btn) =>
         btn.addEventListener('click', (event) => {
           if (event.target.textContent === 'Caps Lock') {
@@ -532,6 +751,14 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
               this.setCaretPosition(textarea, carPos);
             }
+          }
+
+          if (event.target.textContent === 'Tab') {
+            textarea.value += '    ';
+          }
+
+          if (event.target.textContent === 'Enter') {
+            textarea.value += '\n';
           }
         })
       );
@@ -580,6 +807,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.textarea').focus();
   keyBrd.pressAnimation();
   keyBrd.buttonsHighlight();
+  keyBrd.keydownAddText();
   keyBrd.buttonsAddText();
 });
 
@@ -590,6 +818,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // const arr =
 //   '~!@#$%^&*()_+b   tQWERTYUIOP{}|   cASDFGHJKL:"e   sZXCVBNM<>?s'.split('');
+// console.log(arr);
+
+// const arr =
+//   'ё1234567890-=б   тйцукенгшщзхъ   кфывапролджэз   шячсмитьбю.ш'.split('');
 // console.log(arr);
 
 // let arr = [];
