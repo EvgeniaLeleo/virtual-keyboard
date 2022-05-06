@@ -96,14 +96,15 @@ body {
 
     &:hover {
       background-color: rgb(125, 176, 208);
-      box-shadow: 0 0 10px rgba(125, 176, 208, 0.3);
+      box-shadow: 0 0 15px rgba(125, 176, 208, 0.3);
     }
   }
 }
 
-.hover {
+.hover,
+.active {
   background-color: rgb(125, 176, 208) !important;
-  box-shadow: 0 0 10px rgba(125, 176, 208, 0.3) !important;
+  box-shadow: 0 0 15px rgba(125, 176, 208, 0.3) !important;
 }
 
 .btn {

@@ -617,8 +617,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
           this.caps = !this.caps;
           this.keyboardLayout();
-          const toggle = this.caps ? 'add' : 'remove';
-          btnCaps.classList[toggle]('hover');
+
+          btnCaps.classList.toggle('active');
         }
 
         for (let line = 0; line < 5; line++) {
@@ -629,7 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (event.code === this.lineCodesEn[line][i]) {
               buttonsLine[i].style.background = 'rgb(125, 176, 208)';
               buttonsLine[i].style.boxShadow =
-                '0 0 10px rgba(125, 176, 208, 0.3)';
+                '0 0 15px rgba(125, 176, 208, 0.3)';
               buttonsLine[i].style.transform = 'translateY(2px)';
 
               function btnTransit() {
@@ -690,7 +690,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             for (let i = 0; i < buttonsLine.length; i++) {
               if (event.code === this.lineCodesEn[line][i]) {
-                textarea.value += buttonsLine[i].textContent;
+                const newChar = buttonsLine[i].textContent;
+                const curPos = textarea.selectionStart;
+
+                textarea.value =
+                  textarea.value.slice(0, curPos) +
+                  newChar +
+                  textarea.value.slice(textarea.selectionEnd);
+
+                textarea.selectionStart = curPos + 1;
+                textarea.selectionEnd = textarea.selectionStart;
               }
             }
           }
@@ -711,7 +720,16 @@ document.addEventListener('DOMContentLoaded', () => {
       buttonsChar.forEach((btn) => {
         btn.addEventListener('click', () => {
           textarea.focus();
-          textarea.value += btn.textContent;
+
+          const curPos = textarea.selectionStart;
+
+          textarea.value =
+            textarea.value.slice(0, curPos) +
+            btn.textContent +
+            textarea.value.slice(textarea.selectionEnd);
+
+          textarea.selectionStart = curPos + 1;
+          textarea.selectionEnd = textarea.selectionStart;
         });
       });
 
@@ -723,8 +741,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.caps = !this.caps;
             this.keyboardLayout();
 
-            const toggle = this.caps ? 'add' : 'remove';
-            event.target.classList[toggle]('hover');
+            event.target.classList.toggle('active');
           }
 
           if (event.target.textContent === 'Backspace') {
@@ -755,10 +772,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (event.target.textContent === 'Tab') {
             textarea.value += '    ';
+            const carPos = this.getCaretPosition(textarea);
+            this.setCaretPosition(textarea, carPos + 4);
           }
 
           if (event.target.textContent === 'Enter') {
             textarea.value += '\n';
+            const carPos = this.getCaretPosition(textarea);
+            this.setCaretPosition(textarea, carPos + 4);
           }
         })
       );
