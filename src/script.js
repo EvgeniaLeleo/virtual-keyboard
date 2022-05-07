@@ -635,7 +635,8 @@ class Keyboard {
     this.buttons = document.querySelectorAll('.keyboard__button');
 
     this.buttons.forEach((btn) => btn.addEventListener('click', () => {
-      let button = btn;
+      const button = btn;
+
       button.style.transform = 'translateY(2px)';
       button.style.boxShadow = '-1px -1px 3px rgba(0, 0, 0, 0.6)';
 
@@ -837,12 +838,11 @@ class Keyboard {
           textarea.value = text;
           textarea.selectionStart = carPos - 1;
           textarea.selectionEnd = carPos - 1;
-          textarea.focus();
         } else {
           textarea.selectionStart = carPos;
           textarea.selectionEnd = carPos;
-          textarea.focus();
         }
+        textarea.focus();
       }
 
       if (event.target.textContent === 'Del') {
@@ -853,14 +853,11 @@ class Keyboard {
         if (carPos !== len) {
           text = text.slice(0, carPos) + text.slice(carPos + 1);
           textarea.value = text;
-          textarea.selectionStart = carPos;
-          textarea.selectionEnd = carPos;
-          textarea.focus();
-        } else {
-          textarea.selectionStart = carPos;
-          textarea.selectionEnd = carPos;
-          textarea.focus();
         }
+
+        textarea.selectionStart = carPos;
+        textarea.selectionEnd = carPos;
+        textarea.focus();
       }
 
       if (event.target.textContent === 'Enter') {
