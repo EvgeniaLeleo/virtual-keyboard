@@ -146,6 +146,10 @@ body {
 
 .note {
   color: #67727e;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
   margin-left: 30px;
+
+  &_mb {
+    margin-bottom: 20px;
+  }
 }
