@@ -1,5 +1,3 @@
-'use strict';
-
 class Keyboard {
   constructor() {
     this.keySymbolsEn = [
@@ -17,7 +15,7 @@ class Keyboard {
         '0',
         '-',
         '=',
-        'Backspace'
+        'Backspace',
       ],
       [
         'Tab',
@@ -34,7 +32,7 @@ class Keyboard {
         '[',
         ']',
         '\\',
-        'Del'
+        'Del',
       ],
       [
         'Caps Lock',
@@ -49,10 +47,10 @@ class Keyboard {
         'l',
         ';',
         '"',
-        'Enter'
+        'Enter',
       ],
       ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '', 'Shift'],
-      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', '']
+      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', ''],
     ];
 
     this.keySymbolsEnCaps = [
@@ -70,7 +68,7 @@ class Keyboard {
         '0',
         '-',
         '=',
-        'Backspace'
+        'Backspace',
       ],
       [
         'Tab',
@@ -87,7 +85,7 @@ class Keyboard {
         '[',
         ']',
         '\\',
-        'Del'
+        'Del',
       ],
       [
         'Caps Lock',
@@ -102,10 +100,10 @@ class Keyboard {
         'L',
         ';',
         '"',
-        'Enter'
+        'Enter',
       ],
       ['Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', '', 'Shift'],
-      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', '']
+      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', ''],
     ];
 
     this.keySymbolsEnShift = [
@@ -123,7 +121,7 @@ class Keyboard {
         ')',
         '_',
         '+',
-        'Backspace'
+        'Backspace',
       ],
       [
         'Tab',
@@ -140,7 +138,7 @@ class Keyboard {
         '{',
         '}',
         '|',
-        'Del'
+        'Del',
       ],
       [
         'Caps Lock',
@@ -155,10 +153,10 @@ class Keyboard {
         'L',
         ':',
         '"',
-        'Enter'
+        'Enter',
       ],
       ['Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', '', 'Shift'],
-      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', '']
+      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', ''],
     ];
 
     this.keySymbolsRu = [
@@ -176,7 +174,7 @@ class Keyboard {
         '0',
         '-',
         '=',
-        'Backspace'
+        'Backspace',
       ],
       [
         'Tab',
@@ -193,7 +191,7 @@ class Keyboard {
         'х',
         'ъ',
         '\\',
-        'Del'
+        'Del',
       ],
       [
         'Caps Lock',
@@ -208,10 +206,10 @@ class Keyboard {
         'д',
         'ж',
         'э',
-        'Enter'
+        'Enter',
       ],
       ['Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '', 'Shift'],
-      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', '']
+      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', ''],
     ];
 
     this.keySymbolsRuCaps = [
@@ -229,7 +227,7 @@ class Keyboard {
         '0',
         '-',
         '=',
-        'Backspace'
+        'Backspace',
       ],
       [
         'Tab',
@@ -246,7 +244,7 @@ class Keyboard {
         'Х',
         'Ъ',
         '\\',
-        'Del'
+        'Del',
       ],
       [
         'Caps Lock',
@@ -261,10 +259,10 @@ class Keyboard {
         'Д',
         'Ж',
         'З',
-        'Enter'
+        'Enter',
       ],
       ['Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '.', '', 'Shift'],
-      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', '']
+      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', ''],
     ];
 
     this.keySymbolsRuShift = [
@@ -282,7 +280,7 @@ class Keyboard {
         ')',
         '_',
         '+',
-        'Backspace'
+        'Backspace',
       ],
       [
         'Tab',
@@ -299,7 +297,7 @@ class Keyboard {
         'Х',
         'Ъ',
         '/',
-        'Del'
+        'Del',
       ],
       [
         'Caps Lock',
@@ -314,10 +312,10 @@ class Keyboard {
         'Д',
         'Ж',
         'Э',
-        'Enter'
+        'Enter',
       ],
       ['Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', ',', '', 'Shift'],
-      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', '']
+      ['Ctrl', 'Win', 'Alt', ' ', 'Alt', 'Ctrl', '', '', ''],
     ];
 
     this.lineCodes = [
@@ -335,7 +333,7 @@ class Keyboard {
         'Digit0',
         'Minus',
         'Equal',
-        'Backspace'
+        'Backspace',
       ],
       [
         'Tab',
@@ -352,7 +350,7 @@ class Keyboard {
         'BracketLeft',
         'BracketRight',
         'Backslash',
-        'Delete'
+        'Delete',
       ],
       [
         'CapsLock',
@@ -367,7 +365,7 @@ class Keyboard {
         'KeyL',
         'Semicolon',
         'Quote',
-        'Enter'
+        'Enter',
       ],
       [
         'ShiftLeft',
@@ -382,7 +380,7 @@ class Keyboard {
         'Period',
         'Slash',
         'ArrowUp',
-        'ShiftRight'
+        'ShiftRight',
       ],
       [
         'ControlLeft',
@@ -393,8 +391,8 @@ class Keyboard {
         'ControlRight',
         'ArrowLeft',
         'ArrowDown',
-        'ArrowRight'
-      ]
+        'ArrowRight',
+      ],
     ];
 
     this.caps = false;
@@ -568,7 +566,7 @@ class Keyboard {
           'Shift',
           'Ctrl',
           'Win',
-          'Alt'
+          'Alt',
         ].includes(btn.textContent)
       ) {
         btn.classList.add('btn__char');
@@ -706,7 +704,7 @@ class Keyboard {
           'ControlLeft',
           'ControlRight',
           'AltLeft',
-          'AltRight'
+          'AltRight',
         ].includes(event.code)
       ) {
         event.preventDefault();
@@ -719,21 +717,21 @@ class Keyboard {
               let newChar = buttonsLine[i].textContent;
 
               if (event.code === 'Tab') {
-                newChar = '    ';
+                newChar = '\t';
               }
 
               textarea.setRangeText(
                 newChar,
                 textarea.selectionStart,
                 textarea.selectionEnd,
-                'end'
+                'end',
               );
             }
           }
         }
       }
 
-      if (event.code === 'CapsLock') {
+      if (event.code === 'CapsLock' && !event.repeat) {
         const btnCaps = keyboardLine[2].querySelectorAll('.keyboard__button')[0];
 
         this.caps = !this.caps;
@@ -742,21 +740,23 @@ class Keyboard {
         btnCaps.classList.toggle('active');
       }
 
-      if (event.shiftKey) {
+      if (event.shiftKey && !event.repeat) {
+        const buttonShiftL = document.querySelectorAll('.btn__shift')[0];
+        const buttonShiftR = document.querySelectorAll('.btn__shift')[1];
         if (event.code === 'ShiftLeft') {
-          const buttonShiftL = document.querySelectorAll('.btn__shift')[0];
-
-          buttonShiftL.classList.toggle('active');
-          this.shift = !this.shift;
-          this.keyboardLayout();
+          if (!buttonShiftR.classList.contains('active')) {
+            buttonShiftL.classList.toggle('active');
+            this.shift = !this.shift;
+            this.keyboardLayout();
+          }
         }
 
         if (event.code === 'ShiftRight') {
-          const buttonShiftR = document.querySelectorAll('.btn__shift')[1];
-
-          buttonShiftR.classList.toggle('active');
-          this.shift = !this.shift;
-          this.keyboardLayout();
+          if (!buttonShiftL.classList.contains('active')) {
+            buttonShiftR.classList.toggle('active');
+            this.shift = !this.shift;
+            this.keyboardLayout();
+          }
         }
       }
 
@@ -772,20 +772,22 @@ class Keyboard {
 
   shiftOff() {
     document.addEventListener('keyup', (event) => {
+      const buttonShiftL = document.querySelectorAll('.btn__shift')[0];
+      const buttonShiftR = document.querySelectorAll('.btn__shift')[1];
       if (event.code === 'ShiftLeft') {
-        const buttonShiftL = document.querySelectorAll('.btn__shift')[0];
-
-        buttonShiftL.classList.toggle('active');
-        this.shift = !this.shift;
-        this.keyboardLayout();
+        if (!buttonShiftR.classList.contains('active')) {
+          buttonShiftL.classList.toggle('active');
+          this.shift = !this.shift;
+          this.keyboardLayout();
+        }
       }
 
       if (event.code === 'ShiftRight') {
-        const buttonShiftR = document.querySelectorAll('.btn__shift')[1];
-
-        buttonShiftR.classList.toggle('active');
-        this.shift = !this.shift;
-        this.keyboardLayout();
+        if (!buttonShiftL.classList.contains('active')) {
+          buttonShiftR.classList.toggle('active');
+          this.shift = !this.shift;
+          this.keyboardLayout();
+        }
       }
     });
   }
@@ -803,14 +805,14 @@ class Keyboard {
         let newChar = btn.textContent;
 
         if (btn.textContent === 'Tab') {
-          newChar = '    ';
+          newChar = '\t';
         }
 
         textarea.setRangeText(
           newChar,
           textarea.selectionStart,
           textarea.selectionEnd,
-          'end'
+          'end',
         );
       });
     });
@@ -825,7 +827,7 @@ class Keyboard {
 
       if (event.target.textContent === 'Shift') {
         this.shiftToggle(event.target);
-        setTimeout(this.shiftToggle, 500, event.target);
+        setTimeout(this.shiftToggle, 300, event.target);
       }
 
       if (event.target.textContent === 'Backspace') {
@@ -848,7 +850,7 @@ class Keyboard {
       if (event.target.textContent === 'Del') {
         const carPos = textarea.selectionStart;
         let text = textarea.value;
-        let len = text.length;
+        const len = text.length;
 
         if (carPos !== len) {
           text = text.slice(0, carPos) + text.slice(carPos + 1);
@@ -867,7 +869,7 @@ class Keyboard {
           '\n',
           textarea.selectionStart,
           textarea.selectionEnd,
-          'end'
+          'end',
         );
 
         textarea.selectionStart = carPos + 1;
