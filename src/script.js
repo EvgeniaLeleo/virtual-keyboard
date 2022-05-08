@@ -745,16 +745,16 @@ class Keyboard {
         const buttonShiftR = document.querySelectorAll('.btn__shift')[1];
         if (event.code === 'ShiftLeft') {
           if (!buttonShiftR.classList.contains('active')) {
-            buttonShiftL.classList.toggle('active');
-            this.shift = !this.shift;
+            buttonShiftL.classList.add('active');
+            this.shift = true;
             this.keyboardLayout();
           }
         }
 
         if (event.code === 'ShiftRight') {
           if (!buttonShiftL.classList.contains('active')) {
-            buttonShiftR.classList.toggle('active');
-            this.shift = !this.shift;
+            buttonShiftR.classList.add('active');
+            this.shift = true;
             this.keyboardLayout();
           }
         }
@@ -775,17 +775,17 @@ class Keyboard {
       const buttonShiftL = document.querySelectorAll('.btn__shift')[0];
       const buttonShiftR = document.querySelectorAll('.btn__shift')[1];
       if (event.code === 'ShiftLeft') {
+        buttonShiftL.classList.remove('active');
         if (!buttonShiftR.classList.contains('active')) {
-          buttonShiftL.classList.toggle('active');
-          this.shift = !this.shift;
+          this.shift = false;
           this.keyboardLayout();
         }
       }
 
       if (event.code === 'ShiftRight') {
+        buttonShiftR.classList.remove('active');
         if (!buttonShiftL.classList.contains('active')) {
-          buttonShiftR.classList.toggle('active');
-          this.shift = !this.shift;
+          this.shift = false;
           this.keyboardLayout();
         }
       }
