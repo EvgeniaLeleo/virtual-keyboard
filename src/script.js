@@ -258,7 +258,7 @@ class Keyboard {
         'Л',
         'Д',
         'Ж',
-        'З',
+        'Э',
         'Enter',
       ],
       ['Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '.', '', 'Shift'],
@@ -717,7 +717,7 @@ class Keyboard {
               let newChar = buttonsLine[i].textContent;
 
               if (event.code === 'Tab') {
-                newChar = '\t';
+                newChar = '    ';
               }
 
               textarea.setRangeText(
@@ -805,7 +805,7 @@ class Keyboard {
         let newChar = btn.textContent;
 
         if (btn.textContent === 'Tab') {
-          newChar = '\t';
+          newChar = '    ';
         }
 
         textarea.setRangeText(
@@ -827,7 +827,7 @@ class Keyboard {
 
       if (event.target.textContent === 'Shift') {
         this.shiftToggle(event.target);
-        setTimeout(this.shiftToggle, 300, event.target);
+        setTimeout(this.shiftToggle, 200, event.target);
       }
 
       if (event.target.textContent === 'Backspace') {
