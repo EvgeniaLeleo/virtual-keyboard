@@ -717,7 +717,7 @@ class Keyboard {
               let newChar = buttonsLine[i].textContent;
 
               if (event.code === 'Tab') {
-                newChar = '    ';
+                newChar = '\t';
               }
 
               textarea.setRangeText(
@@ -805,7 +805,7 @@ class Keyboard {
         let newChar = btn.textContent;
 
         if (btn.textContent === 'Tab') {
-          newChar = '    ';
+          newChar = '\t';
         }
 
         textarea.setRangeText(
